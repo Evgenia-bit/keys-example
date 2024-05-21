@@ -183,9 +183,13 @@ class TodoItem {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other is TodoItem && runtimeType == other.runtimeType && title == other.title && done == other.done);
+        (other is TodoItem &&
+            runtimeType == other.runtimeType &&
+            id == other.id &&
+            title == other.title &&
+            done == other.done);
   }
 
   @override
-  int get hashCode => Object.hashAll([title, done]);
+  int get hashCode => Object.hashAll([id, title, done]);
 }
